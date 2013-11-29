@@ -1,0 +1,38 @@
+version = "1.0.0";
+description = "Blinker, the hello world program for mobile control";
+
+schema Blinker {
+
+    /* -------- resource cmd -------- */
+
+    enum Cmd {
+        START_CMD, STOP_CMD
+    };
+
+    Cmd cmd {
+        writeonly
+    };
+
+    /* -------- resource count -------- */
+
+    int16 count {
+        readwrite
+    };
+
+    /* -------- resource delay -------- */
+
+    num <0.5, 2.0, 0.100> delay {
+        readwrite
+    };
+
+    /* -------- resource ledState -------- */
+
+    enum LedState {
+        LED_OFF, LED_ON
+    };
+
+    LedState ledState {
+        indicator
+    };
+
+};

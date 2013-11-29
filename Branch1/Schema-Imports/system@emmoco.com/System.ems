@@ -1,0 +1,72 @@
+owner = "system@emmoco.com"
+
+schema System {
+
+    // protocolLevel #13
+    
+    enum ParameterGroup {
+        GROUP_A, GROUP_B
+    }
+
+    // protocolLevel #1
+
+    uint8 $schemaUuid[16] {     // protocolLevel #10 -- invisible to applications
+        readonly
+    }
+    
+    uint16 $mcmProtocolLevel {
+        readonly
+    }
+    
+    uint16 $eapProtocolLevel {
+        readonly
+    }
+
+    uint8 $eapBuildDate[8] {    // protocolLevel #5 -- rename from $eapBuildNumber
+        readonly
+    }
+    
+    // protocolLevel #2
+    
+    int16 $fileIndexReset {
+        writeonly
+    }
+    
+    // protocolLevel #5
+    
+    // protocolLevel #12 -- increase size to 20
+
+    uint8 $schemaHash[20] {
+        readonly
+    }
+
+    // protocolLevel #7
+    
+    struct ResourceCount {
+        uint8 app
+        uint8 sys
+    }
+
+    ResourceCount $resourceCount {
+        readonly
+    }
+    
+    // protocolLevel #9
+    
+    int8 $mobileRssi {
+        readonly
+    }
+    
+    // protocolLevel #11
+
+    uint8 $mcmDisconnect {
+        writeonly
+    }
+
+    // protocolLevel #13
+
+    ParameterGroup $activeGroup {
+        readwrite
+    }
+
+}

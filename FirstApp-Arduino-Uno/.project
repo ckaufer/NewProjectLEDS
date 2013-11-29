@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>FirstApp-Arduino-Uno</name>
+	<comment></comment>
+	<projects>
+	</projects>
+	<buildSpec>
+		<buildCommand>
+			<name>com.emmoco.mcmtooling.core.mcmToolingBuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+		<buildCommand>
+			<name>com.emmoco.mcmtooling.example.mcmToolingBuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+	</buildSpec>
+	<natures>
+		<nature>com.emmoco.mcmtooling.example.mcmToolingExampleNature</nature>
+		<nature>com.emmoco.mcmtooling.core.mcmToolingNature</nature>
+	</natures>
+	<linkedResources>
+		<link>
+			<name>Hal</name>
+			<type>2</type>
+			<locationURI>EM_PLATFORM_LOC/Hal</locationURI>
+		</link>
+	</linkedResources>
+	<variableList>
+		<variable>
+			<name>EM_PLATFORM_LOC</name>
+			<value>$%7BWORKSPACE_LOC%7D/Platform-Arduino-Uno</value>
+		</variable>
+	</variableList>
+</projectDescription>

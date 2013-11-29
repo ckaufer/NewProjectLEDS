@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>Better_blinker-DPEA</name>
+	<comment></comment>
+	<projects>
+	</projects>
+	<buildSpec>
+		<buildCommand>
+			<name>com.emmoco.mcmtooling.core.mcmToolingBuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+		<buildCommand>
+			<name>com.emmoco.mcmtooling.example.mcmToolingBuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+	</buildSpec>
+	<natures>
+		<nature>com.emmoco.mcmtooling.example.mcmToolingExampleNature</nature>
+		<nature>com.emmoco.mcmtooling.core.mcmToolingNature</nature>
+	</natures>
+</projectDescription>
