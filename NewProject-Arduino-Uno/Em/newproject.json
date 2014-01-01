@@ -1,0 +1,430 @@
+{
+    "resources": {
+        "$eapProtocolLevel": {
+            "id": -3,
+            "align": 2,
+            "attributes": {"readonly": true},
+            "type": "u2",
+            "access": "r",
+            "size": 2
+        },
+        "currentSequence": {
+            "id": 4,
+            "align": 1,
+            "attributes": {"readwrite": true},
+            "type": "S:@emmoco.com.NewProject/Sequence",
+            "access": "rw",
+            "size": 7
+        },
+        "$activeGroup": {
+            "id": -10,
+            "align": 1,
+            "pack": 1,
+            "attributes": {"readwrite": true},
+            "type": "E:system@emmoco.com.System/ParameterGroup",
+            "access": "rw",
+            "size": 1
+        },
+        "$mcmDisconnect": {
+            "id": -9,
+            "align": 1,
+            "attributes": {"writeonly": true},
+            "type": "u1",
+            "access": "w",
+            "size": 1
+        },
+        "$eapBuildDate": {
+            "dim": 8,
+            "id": -4,
+            "align": 1,
+            "attributes": {"readonly": true},
+            "type": "A8:u1",
+            "access": "r",
+            "size": 8
+        },
+        "currentSceneId": {
+            "id": 1,
+            "align": 1,
+            "pack": 2,
+            "attributes": {"writeonly": true},
+            "type": "N:0.000000,3.000000,1.000000,0/u1/3",
+            "access": "w",
+            "size": 1
+        },
+        "$resourceCount": {
+            "id": -7,
+            "align": 1,
+            "attributes": {"readonly": true},
+            "type": "S:system@emmoco.com.System/ResourceCount",
+            "access": "r",
+            "size": 2
+        },
+        "$schemaHash": {
+            "dim": 20,
+            "id": -6,
+            "align": 1,
+            "attributes": {"readonly": true},
+            "type": "A20:u1",
+            "access": "r",
+            "size": 20
+        },
+        "$mcmProtocolLevel": {
+            "id": -2,
+            "align": 2,
+            "attributes": {"readonly": true},
+            "type": "u2",
+            "access": "r",
+            "size": 2
+        },
+        "$mobileRssi": {
+            "id": -8,
+            "align": 1,
+            "attributes": {"readonly": true},
+            "type": "i1",
+            "access": "r",
+            "size": 1
+        },
+        "currentSequenceId": {
+            "id": 3,
+            "align": 1,
+            "pack": 2,
+            "attributes": {"writeonly": true},
+            "type": "N:0.000000,2.000000,1.000000,0/u1/2",
+            "access": "w",
+            "size": 1
+        },
+        "currentMode": {
+            "id": 5,
+            "align": 1,
+            "pack": 1,
+            "attributes": {"readwrite": true},
+            "type": "E:@emmoco.com.NewProject/Mode",
+            "access": "rw",
+            "size": 1
+        },
+        "currentScene": {
+            "id": 2,
+            "align": 1,
+            "attributes": {"readwrite": true},
+            "type": "S:@emmoco.com.NewProject/Scene",
+            "access": "rw",
+            "size": 15
+        },
+        "$fileIndexReset": {
+            "id": -5,
+            "align": 2,
+            "attributes": {"writeonly": true},
+            "type": "i2",
+            "access": "w",
+            "size": 2
+        }
+    },
+    "resourceNamesSys": [
+        "$activeGroup",
+        "$eapBuildDate",
+        "$eapProtocolLevel",
+        "$fileIndexReset",
+        "$mcmDisconnect",
+        "$mcmProtocolLevel",
+        "$mobileRssi",
+        "$resourceCount",
+        "$schemaHash"
+    ],
+    "manifest": {
+        "protocolLevel": 13,
+        "hash": [
+            12,
+            139,
+            148,
+            69,
+            138,
+            197,
+            237,
+            36,
+            184,
+            140,
+            154,
+            73,
+            12,
+            155,
+            16,
+            13
+        ],
+        "toolVersion": "13.4.1.201311160446",
+        "name": "NewProject",
+        "$$md5": "0c8b94458ac5ed24b88c9a490c9b100d",
+        "build": [
+            198,
+            237,
+            15,
+            80,
+            67,
+            1,
+            0,
+            0
+        ],
+        "date": "2014-01-01T15:07:37",
+        "maxAlign": 2,
+        "maxSize": 20,
+        "version": "1.0.0"
+    },
+    "resourceNames": [
+        "currentSceneId",
+        "currentScene",
+        "currentSequenceId",
+        "currentSequence",
+        "currentMode",
+        "$mcmProtocolLevel",
+        "$eapProtocolLevel",
+        "$eapBuildDate",
+        "$fileIndexReset",
+        "$schemaHash",
+        "$resourceCount",
+        "$mobileRssi",
+        "$mcmDisconnect",
+        "$activeGroup"
+    ],
+    "attributes": {
+        "description": "",
+        "version": "1.0.0"
+    },
+    "resourceNamesApp": [
+        "currentSceneId",
+        "currentScene",
+        "currentSequenceId",
+        "currentSequence",
+        "currentMode"
+    ],
+    "types": {
+        "system@emmoco.com.System/ResourceCount": {
+            "packed": false,
+            "align": 1,
+            "type": "S:system@emmoco.com.System/ResourceCount",
+            "size": 2,
+            "fields": [
+                {
+                    "pad": 0,
+                    "align": 1,
+                    "name": "app",
+                    "type": "u1",
+                    "size": 1
+                },
+                {
+                    "pad": 0,
+                    "align": 1,
+                    "name": "sys",
+                    "type": "u1",
+                    "size": 1
+                }
+            ]
+        },
+        "std:i2": {
+            "align": 2,
+            "size": 2
+        },
+        "@emmoco.com.NewProject/Sequence": {
+            "packed": false,
+            "align": 1,
+            "type": "S:@emmoco.com.NewProject/Sequence",
+            "size": 7,
+            "fields": [
+                {
+                    "pad": 0,
+                    "align": 1,
+                    "name": "sequenceId",
+                    "pack": 2,
+                    "type": "N:0.000000,2.000000,1.000000,0/u1/2",
+                    "size": 1
+                },
+                {
+                    "pad": 0,
+                    "align": 1,
+                    "name": "seqLength",
+                    "pack": 3,
+                    "type": "N:0.000000,5.000000,1.000000,0/u1/5",
+                    "size": 1
+                },
+                {
+                    "dim": 5,
+                    "pad": 0,
+                    "align": 1,
+                    "name": "sceneList",
+                    "pack": 2,
+                    "type": "A5:N:0.000000,3.000000,1.000000,0/u1/3",
+                    "size": 5
+                }
+            ]
+        },
+        "std:i1": {
+            "align": 1,
+            "size": 1
+        },
+        "@emmoco.com.NewProject/Scene": {
+            "packed": false,
+            "align": 1,
+            "type": "S:@emmoco.com.NewProject/Scene",
+            "size": 15,
+            "fields": [
+                {
+                    "pad": 0,
+                    "align": 1,
+                    "name": "sceneId",
+                    "pack": 2,
+                    "type": "N:0.000000,3.000000,1.000000,0/u1/3",
+                    "size": 1
+                },
+                {
+                    "pad": 0,
+                    "align": 1,
+                    "name": "led2",
+                    "pack": 1,
+                    "type": "E:@emmoco.com.NewProject/LedState",
+                    "size": 1
+                },
+                {
+                    "pad": 0,
+                    "align": 1,
+                    "name": "led3",
+                    "pack": 1,
+                    "type": "E:@emmoco.com.NewProject/LedState",
+                    "size": 1
+                },
+                {
+                    "pad": 0,
+                    "align": 1,
+                    "name": "led4",
+                    "pack": 1,
+                    "type": "E:@emmoco.com.NewProject/LedState",
+                    "size": 1
+                },
+                {
+                    "pad": 0,
+                    "align": 1,
+                    "name": "led5",
+                    "pack": 1,
+                    "type": "E:@emmoco.com.NewProject/LedState",
+                    "size": 1
+                },
+                {
+                    "pad": 0,
+                    "align": 1,
+                    "name": "led6",
+                    "pack": 1,
+                    "type": "E:@emmoco.com.NewProject/LedState",
+                    "size": 1
+                },
+                {
+                    "pad": 0,
+                    "align": 1,
+                    "name": "led7",
+                    "pack": 1,
+                    "type": "E:@emmoco.com.NewProject/LedState",
+                    "size": 1
+                },
+                {
+                    "pad": 0,
+                    "align": 1,
+                    "name": "led8",
+                    "pack": 1,
+                    "type": "E:@emmoco.com.NewProject/LedState",
+                    "size": 1
+                },
+                {
+                    "pad": 0,
+                    "align": 1,
+                    "name": "led9",
+                    "pack": 1,
+                    "type": "E:@emmoco.com.NewProject/LedState",
+                    "size": 1
+                },
+                {
+                    "pad": 0,
+                    "align": 1,
+                    "name": "led10",
+                    "pack": 1,
+                    "type": "E:@emmoco.com.NewProject/LedState",
+                    "size": 1
+                },
+                {
+                    "pad": 0,
+                    "align": 1,
+                    "name": "led11",
+                    "pack": 1,
+                    "type": "E:@emmoco.com.NewProject/LedState",
+                    "size": 1
+                },
+                {
+                    "pad": 0,
+                    "align": 1,
+                    "name": "led12",
+                    "pack": 1,
+                    "type": "E:@emmoco.com.NewProject/LedState",
+                    "size": 1
+                },
+                {
+                    "pad": 0,
+                    "align": 1,
+                    "name": "led13",
+                    "pack": 1,
+                    "type": "E:@emmoco.com.NewProject/LedState",
+                    "size": 1
+                },
+                {
+                    "pad": 0,
+                    "align": 1,
+                    "name": "led14",
+                    "pack": 1,
+                    "type": "E:@emmoco.com.NewProject/LedState",
+                    "size": 1
+                },
+                {
+                    "pad": 0,
+                    "align": 1,
+                    "name": "led15",
+                    "pack": 1,
+                    "type": "E:@emmoco.com.NewProject/LedState",
+                    "size": 1
+                }
+            ]
+        },
+        "std:u1": {
+            "align": 1,
+            "size": 1
+        },
+        "system@emmoco.com.System/ParameterGroup": {
+            "values": [
+                "GROUP_A",
+                "GROUP_B"
+            ],
+            "align": 1,
+            "pack": 1,
+            "type": "E:system@emmoco.com.System/ParameterGroup",
+            "size": 1
+        },
+        "@emmoco.com.NewProject/Mode": {
+            "values": [
+                "PLAY",
+                "EDIT"
+            ],
+            "align": 1,
+            "pack": 1,
+            "type": "E:@emmoco.com.NewProject/Mode",
+            "size": 1
+        },
+        "std:u2": {
+            "align": 2,
+            "size": 2
+        },
+        "@emmoco.com.NewProject/LedState": {
+            "values": [
+                "OFF",
+                "ON"
+            ],
+            "align": 1,
+            "pack": 1,
+            "type": "E:@emmoco.com.NewProject/LedState",
+            "size": 1
+        }
+    },
+    "imports": {"@emmoco.com.NewProject": true}
+}

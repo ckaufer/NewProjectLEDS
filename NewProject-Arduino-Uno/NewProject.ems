@@ -1,0 +1,63 @@
+version = "1.0.0"
+description = ""
+
+schema NewProject {
+
+	
+	typedef num <0, 3> SceneId;
+	typedef num <0, 2> SequenceId;
+	typedef num <0, 5> SequenceLength;
+	
+	enum Mode {
+	    PLAY, EDIT
+	}
+	
+	enum LedState {
+	    OFF, ON
+	}
+	
+	struct Scene {
+        SceneId sceneId;
+        LedState led2;
+	    LedState led3;
+	    LedState led4;
+	    LedState led5;
+	    LedState led6;
+	    LedState led7;
+	    LedState led8;
+	    LedState led9;
+	    LedState led10;
+	    LedState led11;
+	    LedState led12;
+	    LedState led13;
+	    LedState led14;
+	    LedState led15;
+	}
+	
+	struct Sequence {
+	    SequenceId sequenceId;
+        SequenceLength seqLength;
+	    SceneId sceneList[5];
+	}
+	
+	SceneId currentSceneId {
+	    writeonly;
+	}
+	
+	Scene currentScene {
+	    readwrite;
+	}
+	
+	SequenceId currentSequenceId {
+	    writeonly;
+	}
+	
+	Sequence currentSequence {
+	    readwrite;
+	}
+	
+	Mode currentMode {
+	    readwrite;
+	}
+
+};

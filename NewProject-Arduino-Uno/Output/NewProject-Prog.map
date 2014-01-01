@@ -1,0 +1,635 @@
+Archive member included because of file (symbol)
+
+c:/program files/arduino-1.0.5/hardware/tools/avr/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_copy_data.o)
+                              Output/NewProject-Prog.obj (__do_copy_data)
+c:/program files/arduino-1.0.5/hardware/tools/avr/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_clear_bss.o)
+                              Output/NewProject-Prog.obj (__do_clear_bss)
+
+Allocating common symbols
+Common symbol       size              file
+
+sequenceList        0xe               Output/NewProject-Prog.obj
+Em_App_recvIdx      0x1               Output/NewProject.obj
+Em_App_xmitSize     0x1               Output/NewProject.obj
+Em_App_valp         0x2               Output/NewProject.obj
+Em_App_ind_u        0xc               Output/NewProject.obj
+Em_App_recvSize     0x1               Output/NewProject.obj
+Em_App_msg_u        0x1c              Output/NewProject.obj
+curSceneId          0x1               Output/NewProject-Prog.obj
+curMode             0x1               Output/NewProject-Prog.obj
+Em_App_pdHdlr       0x2               Output/NewProject.obj
+Em_App_bufp         0x2               Output/NewProject.obj
+Em_App_xmitIdx      0x1               Output/NewProject.obj
+Em_App_desc         0x2               Output/NewProject.obj
+sceneList           0x2d              Output/NewProject-Prog.obj
+
+Discarded input sections
+
+ .data          0x00000000        0x0 ../Platform-Arduino-Uno/Avr/crt0.o
+ .bss           0x00000000        0x0 ../Platform-Arduino-Uno/Avr/crt0.o
+ .text          0x00000000        0x0 Output/NewProject-Prog.obj
+ .data          0x00000000        0x0 Output/NewProject-Prog.obj
+ .bss           0x00000000        0x0 Output/NewProject-Prog.obj
+ .text          0x00000000        0x0 Output/NewProject.obj
+ .data          0x00000000        0x0 Output/NewProject.obj
+ .bss           0x00000000        0x0 Output/NewProject.obj
+ .text.Em_App_marshallToBuf
+                0x00000000        0x0 Output/NewProject.obj
+ .text.Em_App_marshallToVal
+                0x00000000        0x0 Output/NewProject.obj
+ .text.NewProject_setDeviceName
+                0x00000000        0x0 Output/NewProject.obj
+ .text.Em_App_sendIndicator
+                0x00000000        0x0 Output/NewProject.obj
+ .text.Em_App_startIndSend
+                0x00000000        0x0 Output/NewProject.obj
+ .text.NewProject_pairingOn
+                0x00000000        0x0 Output/NewProject.obj
+ .text.NewProject_pairingOff
+                0x00000000        0x0 Output/NewProject.obj
+ .text.NewProject_disconnect
+                0x00000000        0x0 Output/NewProject.obj
+ .text.NewProject_broadcastOff
+                0x00000000        0x0 Output/NewProject.obj
+ .text.NewProject_activateParameters
+                0x00000000        0x0 Output/NewProject.obj
+ .text.NewProject_accept
+                0x00000000        0x0 Output/NewProject.obj
+ .text.Em_Message_restart
+                0x00000000        0x0 Output/NewProject.obj
+ .text          0x00000000        0x0 Output/Hal.obj
+ .data          0x00000000        0x0 Output/Hal.obj
+ .bss           0x00000000        0x0 Output/Hal.obj
+ .text.Hal_buttonEnable
+                0x00000000        0x0 Output/Hal.obj
+ .text.Hal_debugOn
+                0x00000000        0x0 Output/Hal.obj
+ .text.Hal_debugOff
+                0x00000000        0x0 Output/Hal.obj
+ .text.Hal_debugPulse
+                0x00000000        0x0 Output/Hal.obj
+ .text.Hal_User_ledToggle
+                0x00000000        0x0 Output/Hal.obj
+ .text.Hal_ledOff
+                0x00000000        0x0 Output/Hal.obj
+ .text.Hal_User_ledRead
+                0x00000000        0x0 Output/Hal.obj
+ .text.Hal_ledRead
+                0x00000000        0x0 Output/Hal.obj
+ .text.Hal_ledToggle
+                0x00000000        0x0 Output/Hal.obj
+ .text.Hal_tickStart
+                0x00000000        0x0 Output/Hal.obj
+ .text.Em_Hal_watchOn
+                0x00000000        0x0 Output/Hal.obj
+ .text.Em_Hal_watchOff
+                0x00000000        0x0 Output/Hal.obj
+ .text          0x00000000        0x0 c:/program files/arduino-1.0.5/hardware/tools/avr/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_copy_data.o)
+ .data          0x00000000        0x0 c:/program files/arduino-1.0.5/hardware/tools/avr/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_copy_data.o)
+ .bss           0x00000000        0x0 c:/program files/arduino-1.0.5/hardware/tools/avr/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_copy_data.o)
+ .text.libgcc   0x00000000        0x0 c:/program files/arduino-1.0.5/hardware/tools/avr/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_copy_data.o)
+ .text          0x00000000        0x0 c:/program files/arduino-1.0.5/hardware/tools/avr/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_clear_bss.o)
+ .data          0x00000000        0x0 c:/program files/arduino-1.0.5/hardware/tools/avr/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_clear_bss.o)
+ .bss           0x00000000        0x0 c:/program files/arduino-1.0.5/hardware/tools/avr/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_clear_bss.o)
+ .text.libgcc   0x00000000        0x0 c:/program files/arduino-1.0.5/hardware/tools/avr/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_clear_bss.o)
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+text             0x00000000         0x00020000         xr
+data             0x00800060         0x0000ffa0         rw !x
+eeprom           0x00810000         0x00010000         rw !x
+fuse             0x00820000         0x00000400         rw !x
+lock             0x00830000         0x00000400         rw !x
+signature        0x00840000         0x00000400         rw !x
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+Address of section .data set to 0x800100
+LOAD ../Platform-Arduino-Uno/Avr/crt0.o
+LOAD Output/NewProject-Prog.obj
+LOAD Output/NewProject.obj
+LOAD Output/Hal.obj
+LOAD c:/program files/arduino-1.0.5/hardware/tools/avr/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a
+LOAD c:/program files/arduino-1.0.5/hardware/tools/avr/bin/../lib/gcc/avr/4.3.2/../../../../avr/lib/avr5\libc.a
+
+.hash
+ *(.hash)
+
+.dynsym
+ *(.dynsym)
+
+.dynstr
+ *(.dynstr)
+
+.gnu.version
+ *(.gnu.version)
+
+.gnu.version_d
+ *(.gnu.version_d)
+
+.gnu.version_r
+ *(.gnu.version_r)
+
+.rel.init
+ *(.rel.init)
+
+.rela.init
+ *(.rela.init)
+
+.rel.text
+ *(.rel.text)
+ *(.rel.text.*)
+ *(.rel.gnu.linkonce.t*)
+
+.rela.text
+ *(.rela.text)
+ *(.rela.text.*)
+ *(.rela.gnu.linkonce.t*)
+
+.rel.fini
+ *(.rel.fini)
+
+.rela.fini
+ *(.rela.fini)
+
+.rel.rodata
+ *(.rel.rodata)
+ *(.rel.rodata.*)
+ *(.rel.gnu.linkonce.r*)
+
+.rela.rodata
+ *(.rela.rodata)
+ *(.rela.rodata.*)
+ *(.rela.gnu.linkonce.r*)
+
+.rel.data
+ *(.rel.data)
+ *(.rel.data.*)
+ *(.rel.gnu.linkonce.d*)
+
+.rela.data
+ *(.rela.data)
+ *(.rela.data.*)
+ *(.rela.gnu.linkonce.d*)
+
+.rel.ctors
+ *(.rel.ctors)
+
+.rela.ctors
+ *(.rela.ctors)
+
+.rel.dtors
+ *(.rel.dtors)
+
+.rela.dtors
+ *(.rela.dtors)
+
+.rel.got
+ *(.rel.got)
+
+.rela.got
+ *(.rela.got)
+
+.rel.bss
+ *(.rel.bss)
+
+.rela.bss
+ *(.rela.bss)
+
+.rel.plt
+ *(.rel.plt)
+
+.rela.plt
+ *(.rela.plt)
+
+xdc.meta
+ *(xdc.meta)
+
+.text           0x00000000      0x9a6
+ *(.vectors)
+ .vectors       0x00000000       0x68 ../Platform-Arduino-Uno/Avr/crt0.o
+                0x00000000                __vectors
+                0x00000000                __vector_default
+ *(.vectors)
+ *(.progmem.gcc*)
+ *(.progmem*)
+                0x00000068                . = ALIGN (0x2)
+                0x00000068                __trampolines_start = .
+ *(.trampolines)
+ .trampolines   0x00000068        0x0 linker stubs
+ *(.trampolines*)
+                0x00000068                __trampolines_end = .
+ *(.jumptables)
+ *(.jumptables*)
+ *(.lowtext)
+ *(.lowtext*)
+                0x00000068                __ctors_start = .
+ *(.ctors)
+                0x00000068                __ctors_end = .
+                0x00000068                __dtors_start = .
+ *(.dtors)
+                0x00000068                __dtors_end = .
+ SORT(*)(.ctors)
+ SORT(*)(.dtors)
+ *(.init0)
+ .init0         0x00000068        0x0 ../Platform-Arduino-Uno/Avr/crt0.o
+                0x00000068                __init
+ *(.init0)
+ *(.init1)
+ *(.init1)
+ *(.init2)
+ .init2         0x00000068        0xc ../Platform-Arduino-Uno/Avr/crt0.o
+ *(.init2)
+ *(.init3)
+ *(.init3)
+ *(.init4)
+ .init4         0x00000074       0x16 c:/program files/arduino-1.0.5/hardware/tools/avr/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_copy_data.o)
+                0x00000074                __do_copy_data
+ .init4         0x0000008a       0x10 c:/program files/arduino-1.0.5/hardware/tools/avr/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_clear_bss.o)
+                0x0000008a                __do_clear_bss
+ *(.init4)
+ *(.init5)
+ *(.init5)
+ *(.init6)
+ *(.init6)
+ *(.init7)
+ *(.init7)
+ *(.init8)
+ *(.init8)
+ *(.init9)
+ .init9         0x0000009a        0x4 ../Platform-Arduino-Uno/Avr/crt0.o
+ *(.init9)
+ *(.text)
+ .text          0x0000009e        0x4 ../Platform-Arduino-Uno/Avr/crt0.o
+                0x0000009e                __vector_22
+                0x0000009e                __vector_24
+                0x0000009e                __vector_12
+                0x0000009e                __bad_interrupt
+                0x0000009e                __vector_6
+                0x0000009e                __vector_3
+                0x0000009e                __vector_23
+                0x0000009e                __vector_25
+                0x0000009e                __vector_13
+                0x0000009e                __vector_17
+                0x0000009e                __vector_19
+                0x0000009e                __vector_7
+                0x0000009e                __vector_5
+                0x0000009e                __vector_4
+                0x0000009e                __vector_9
+                0x0000009e                __vector_2
+                0x0000009e                __vector_21
+                0x0000009e                __vector_15
+                0x0000009e                __vector_8
+                0x0000009e                __vector_14
+                0x0000009e                __vector_10
+                0x0000009e                __vector_16
+                0x0000009e                __vector_20
+                0x000000a2                . = ALIGN (0x2)
+ *(.text.*)
+ .text.NewProject_currentScene_fetch
+                0x000000a2       0x40 Output/NewProject-Prog.obj
+                0x000000a2                NewProject_currentScene_fetch
+ .text.NewProject_currentSequenceId_store
+                0x000000e2        0x2 Output/NewProject-Prog.obj
+                0x000000e2                NewProject_currentSequenceId_store
+ .text.NewProject_currentSequence_fetch
+                0x000000e4        0x2 Output/NewProject-Prog.obj
+                0x000000e4                NewProject_currentSequence_fetch
+ .text.NewProject_currentSequence_store
+                0x000000e6        0x2 Output/NewProject-Prog.obj
+                0x000000e6                NewProject_currentSequence_store
+ .text.NewProject_currentMode_fetch
+                0x000000e8        0xa Output/NewProject-Prog.obj
+                0x000000e8                NewProject_currentMode_fetch
+ .text.NewProject_currentMode_store
+                0x000000f2        0xa Output/NewProject-Prog.obj
+                0x000000f2                NewProject_currentMode_store
+ .text.NewProject_disconnectHandler
+                0x000000fc        0x6 Output/NewProject-Prog.obj
+                0x000000fc                NewProject_disconnectHandler
+ .text.NewProject_connectHandler
+                0x00000102        0x6 Output/NewProject-Prog.obj
+                0x00000102                NewProject_connectHandler
+ .text.updateLed
+                0x00000108       0x12 Output/NewProject-Prog.obj
+                0x00000108                updateLed
+ .text.updateSceneLeds
+                0x0000011a       0x8a Output/NewProject-Prog.obj
+                0x0000011a                updateSceneLeds
+ .text.NewProject_currentScene_store
+                0x000001a4       0x40 Output/NewProject-Prog.obj
+                0x000001a4                NewProject_currentScene_store
+ .text.NewProject_currentSceneId_store
+                0x000001e4       0x18 Output/NewProject-Prog.obj
+                0x000001e4                NewProject_currentSceneId_store
+ .text.main     0x000001fc        0xe Output/NewProject-Prog.obj
+                0x000001fc                main
+ .text.Em_App_xmitReady
+                0x0000020a       0x80 Output/NewProject.obj
+                0x0000020a                Em_App_xmitReady
+ .text.Em_App_startResSend
+                0x0000028a       0x20 Output/NewProject.obj
+                0x0000028a                Em_App_startResSend
+ .text.Em_App_sendResponse
+                0x000002aa       0x2a Output/NewProject.obj
+                0x000002aa                Em_App_sendResponse
+ .text.Em_App_storeDispatch
+                0x000002d4       0x80 Output/NewProject.obj
+                0x000002d4                Em_App_storeDispatch
+ .text.Em_App_fetchDispatch
+                0x00000354       0x50 Output/NewProject.obj
+                0x00000354                Em_App_fetchDispatch
+ .text.Em_App_sysStoreDispatch
+                0x000003a4       0x22 Output/NewProject.obj
+                0x000003a4                Em_App_sysStoreDispatch
+ .text.Em_App_sysFetchDispatch
+                0x000003c6       0xec Output/NewProject.obj
+                0x000003c6                Em_App_sysFetchDispatch
+ .text.Em_Message_nextXmit
+                0x000004b2       0x44 Output/NewProject.obj
+                0x000004b2                Em_Message_nextXmit
+ .text.NewProject_reset
+                0x000004f6       0x52 Output/NewProject.obj
+                0x000004f6                NewProject_reset
+ .text.NewProject_start
+                0x00000548        0xc Output/NewProject.obj
+                0x00000548                NewProject_start
+ .text.Em_Message_dispatch
+                0x00000554       0x76 Output/NewProject.obj
+                0x00000554                Em_Message_dispatch
+ .text.Hal_connected
+                0x000005ca        0x4 Output/Hal.obj
+                0x000005ca                Hal_connected
+ .text.Hal_disconnected
+                0x000005ce        0x4 Output/Hal.obj
+                0x000005ce                Hal_disconnected
+ .text.Hal_delay
+                0x000005d2       0x32 Output/Hal.obj
+                0x000005d2                Hal_delay
+ .text.Hal_init
+                0x00000604       0x5e Output/Hal.obj
+                0x00000604                Hal_init
+ .text.Hal_idleLoop
+                0x00000662       0x62 Output/Hal.obj
+                0x00000662                Hal_idleLoop
+ .text.Hal_User_ledOn
+                0x000006c4       0x74 Output/Hal.obj
+                0x000006c4                Hal_User_ledOn
+ .text.Hal_User_ledOff
+                0x00000738       0x74 Output/Hal.obj
+                0x00000738                Hal_User_ledOff
+ .text.Em_Hal_lock
+                0x000007ac        0x8 Output/Hal.obj
+                0x000007ac                Em_Hal_lock
+ .text.Em_Hal_reset
+                0x000007b4       0x42 Output/Hal.obj
+                0x000007b4                Em_Hal_reset
+ .text.Em_Hal_startSend
+                0x000007f6       0x1c Output/Hal.obj
+                0x000007f6                Em_Hal_startSend
+ .text.Em_Hal_unlock
+                0x00000812        0xc Output/Hal.obj
+                0x00000812                Em_Hal_unlock
+ .text.__vector_18
+                0x0000081e       0xa8 Output/Hal.obj
+                0x0000081e                __vector_18
+ .text.__vector_11
+                0x000008c6       0x4e Output/Hal.obj
+                0x000008c6                __vector_11
+ .text.__vector_1
+                0x00000914       0x92 Output/Hal.obj
+                0x00000914                __vector_1
+                0x000009a6                . = ALIGN (0x2)
+ *(.fini9)
+ *(.fini9)
+ *(.fini8)
+ *(.fini8)
+ *(.fini7)
+ *(.fini7)
+ *(.fini6)
+ *(.fini6)
+ *(.fini5)
+ *(.fini5)
+ *(.fini4)
+ *(.fini4)
+ *(.fini3)
+ *(.fini3)
+ *(.fini2)
+ *(.fini2)
+ *(.fini1)
+ *(.fini1)
+ *(.fini0)
+ *(.fini0)
+                0x000009a6                _etext = .
+
+.data           0x00800100      0x120 load address 0x000009a6
+                0x00800100                PROVIDE (__data_start, .)
+                0x00800200                . = (. + 0x100)
+ *fill*         0x00800100      0x100 00
+                0x00800200                em__stackEnd = .
+ *(.data)
+ *(.data*)
+ .data.Em_App_inBuf
+                0x00800200        0x2 Output/NewProject.obj
+                0x00800200                Em_App_inBuf
+ *(.rodata)
+ *(.rodata*)
+ .rodata.Em_App_hash
+                0x00800202       0x13 Output/NewProject.obj
+                0x00800202                Em_App_hash
+ .rodata.Em_App_build
+                0x00800215        0x8 Output/NewProject.obj
+                0x00800215                Em_App_build
+ .rodata.Em_App_endian
+                0x0080021d        0x2 Output/NewProject.obj
+                0x0080021d                Em_App_endian
+ *(.gnu.linkonce.d*)
+                0x00800220                . = ALIGN (0x2)
+ *fill*         0x0080021f        0x1 00
+                0x00800220                _edata = .
+                0x00800220                PROVIDE (__data_end, .)
+
+.bss            0x00800220       0x8c load address 0x00000ac6
+                0x00800220                PROVIDE (__bss_start, .)
+ *(.bss)
+ *(.bss*)
+ .bss.Em_App_state
+                0x00800220        0x1 Output/NewProject.obj
+                0x00800220                Em_App_state
+ .bss.Em_App_fileIndex
+                0x00800221        0x4 Output/NewProject.obj
+                0x00800221                Em_App_fileIndex
+ .bss.Em_App_xmitMask
+                0x00800225        0x4 Output/NewProject.obj
+                0x00800225                Em_App_xmitMask
+ .bss.Em_App_outBuf
+                0x00800229        0x2 Output/NewProject.obj
+                0x00800229                Em_App_outBuf
+ .bss._Em_Message_rxBuf
+                0x0080022b        0x2 Output/NewProject.obj
+                0x0080022b                _Em_Message_rxBuf
+ .bss._Em_Message_rxCnt
+                0x0080022d        0x1 Output/NewProject.obj
+                0x0080022d                _Em_Message_rxCnt
+ .bss._Em_Message_txBuf
+                0x0080022e        0x2 Output/NewProject.obj
+                0x0080022e                _Em_Message_txBuf
+ .bss._Em_Message_txCnt
+                0x00800230        0x1 Output/NewProject.obj
+                0x00800230                _Em_Message_txCnt
+ .bss.Em_App_devName
+                0x00800231        0x2 Output/NewProject.obj
+                0x00800231                Em_App_devName
+ .bss.handlerEvents
+                0x00800233        0x2 Output/Hal.obj
+ .bss.handlerTab
+                0x00800235        0x6 Output/Hal.obj
+ *(COMMON)
+ COMMON         0x0080023b       0x3d Output/NewProject-Prog.obj
+                0x0080023b                sequenceList
+                0x00800249                curSceneId
+                0x0080024a                curMode
+                0x0080024b                sceneList
+ COMMON         0x00800278       0x34 Output/NewProject.obj
+                0x00800278                Em_App_recvIdx
+                0x00800279                Em_App_xmitSize
+                0x0080027a                Em_App_valp
+                0x0080027c                Em_App_ind_u
+                0x00800288                Em_App_recvSize
+                0x00800289                Em_App_msg_u
+                0x008002a5                Em_App_pdHdlr
+                0x008002a7                Em_App_bufp
+                0x008002a9                Em_App_xmitIdx
+                0x008002aa                Em_App_desc
+                0x008002ac                PROVIDE (__bss_end, .)
+                0x000009a6                __data_load_start = LOADADDR (.data)
+                0x00000ac6                __data_load_end = (__data_load_start + SIZEOF (.data))
+
+.noinit         0x008002ac        0x0
+                0x008002ac                PROVIDE (__noinit_start, .)
+ *(.noinit*)
+                0x008002ac                PROVIDE (__noinit_end, .)
+                0x008002ac                _end = .
+                0x008002ac                PROVIDE (__heap_start, .)
+
+.eeprom         0x00810000        0x0
+ *(.eeprom*)
+                0x00810000                __eeprom_end = .
+
+.fuse
+ *(.fuse)
+ *(.lfuse)
+ *(.hfuse)
+ *(.efuse)
+
+.lock
+ *(.lock*)
+
+.signature
+ *(.signature*)
+
+.stab
+ *(.stab)
+
+.stabstr
+ *(.stabstr)
+
+.stab.excl
+ *(.stab.excl)
+
+.stab.exclstr
+ *(.stab.exclstr)
+
+.stab.index
+ *(.stab.index)
+
+.stab.indexstr
+ *(.stab.indexstr)
+
+.comment
+ *(.comment)
+
+.debug
+ *(.debug)
+
+.line
+ *(.line)
+
+.debug_srcinfo
+ *(.debug_srcinfo)
+
+.debug_sfnames
+ *(.debug_sfnames)
+
+.debug_aranges  0x00000000      0x238
+ *(.debug_aranges)
+ .debug_aranges
+                0x00000000       0x80 Output/NewProject-Prog.obj
+ .debug_aranges
+                0x00000080       0xd0 Output/NewProject.obj
+ .debug_aranges
+                0x00000150       0xe8 Output/Hal.obj
+
+.debug_pubnames
+                0x00000000      0x7b3
+ *(.debug_pubnames)
+ .debug_pubnames
+                0x00000000      0x1d1 Output/NewProject-Prog.obj
+ .debug_pubnames
+                0x000001d1      0x400 Output/NewProject.obj
+ .debug_pubnames
+                0x000005d1      0x1e2 Output/Hal.obj
+
+.debug_info     0x00000000     0x13e1
+ *(.debug_info)
+ .debug_info    0x00000000      0x4ed Output/NewProject-Prog.obj
+ .debug_info    0x000004ed      0x808 Output/NewProject.obj
+ .debug_info    0x00000cf5      0x6ec Output/Hal.obj
+ *(.gnu.linkonce.wi.*)
+
+.debug_abbrev   0x00000000      0x62b
+ *(.debug_abbrev)
+ .debug_abbrev  0x00000000      0x12d Output/NewProject-Prog.obj
+ .debug_abbrev  0x0000012d      0x22c Output/NewProject.obj
+ .debug_abbrev  0x00000359      0x2d2 Output/Hal.obj
+
+.debug_line     0x00000000     0x15ff
+ *(.debug_line)
+ .debug_line    0x00000000      0x305 Output/NewProject-Prog.obj
+ .debug_line    0x00000305      0x8d4 Output/NewProject.obj
+ .debug_line    0x00000bd9      0xa26 Output/Hal.obj
+
+.debug_frame    0x00000000      0x410
+ *(.debug_frame)
+ .debug_frame   0x00000000       0xe0 Output/NewProject-Prog.obj
+ .debug_frame   0x000000e0      0x180 Output/NewProject.obj
+ .debug_frame   0x00000260      0x1b0 Output/Hal.obj
+
+.debug_str      0x00000000      0xa4d
+ *(.debug_str)
+ .debug_str     0x00000000      0x43a Output/NewProject-Prog.obj
+                                0x46e (size before relaxing)
+ .debug_str     0x0000043a      0x3d5 Output/NewProject.obj
+                                0x529 (size before relaxing)
+ .debug_str     0x0000080f      0x23e Output/Hal.obj
+                                0x397 (size before relaxing)
+
+.debug_loc      0x00000000      0x62f
+ *(.debug_loc)
+ .debug_loc     0x00000000      0x13c Output/NewProject-Prog.obj
+ .debug_loc     0x0000013c      0x340 Output/NewProject.obj
+ .debug_loc     0x0000047c      0x1b3 Output/Hal.obj
+
+.debug_macinfo
+ *(.debug_macinfo)
+
+xdc.noload
+OUTPUT(Output/NewProject-Prog.out elf32-avr)
+LOAD linker stubs
+
+.debug_ranges   0x00000000      0x2c8
+ .debug_ranges  0x00000000       0x78 Output/NewProject-Prog.obj
+ .debug_ranges  0x00000078       0xc8 Output/NewProject.obj
+ .debug_ranges  0x00000140      0x188 Output/Hal.obj
