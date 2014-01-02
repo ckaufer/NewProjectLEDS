@@ -84,6 +84,7 @@ void NewProject_currentSceneId_store(NewProject_currentSceneId_t* input) {
 void NewProject_currentScene_fetch(NewProject_currentScene_t* output) {
     *output = sceneList[curSceneId];
     output->sceneId = curSceneId;
+    updateSequenceScenes();
 }
 
 void NewProject_currentScene_store(NewProject_currentScene_t* input) {
@@ -96,6 +97,7 @@ void NewProject_currentScene_store(NewProject_currentScene_t* input) {
 void NewProject_currentSequenceId_store(NewProject_currentSequenceId_t* input) {
     if (curMode == NewProject_EDIT) {
         curSequenceId = *input;
+        updateSequenceScenes();
     }
 }
 
