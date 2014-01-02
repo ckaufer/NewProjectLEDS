@@ -9,16 +9,17 @@ NewProject_currentSceneId_t curSceneId;
 NewProject_currentSequenceId_t curSequenceId;
 NewProject_currentMode_t curMode;
 NewProject_delay_t delayVal = 0.8 * NewProject_delay_scale;
+NewProject_delay_t curTime = 0;
 NewProject_occupiedScenes_t occupiedScenes = 2;
 uint16_t curSceneIdx = 0;
 static void loop(void);
 
 void main() {
 	Hal_init();
-	Hal_tickStart(1000, loop);
+	Hal_tickStart(NewProject_delay_step, loop);
 	NewProject_start();    
 	Hal_idleLoop();
-	//PROGMEM  prog_uint16_t charSet[]  = {3, 3, 4};
+	
 }
 
 void updateLed(uint8_t id, NewProject_LedState ledState) {
@@ -55,8 +56,14 @@ void updateSequenceScenes() {
 }
 
 void loop() {
+    
+    if (curTime < delayVal) {
+        curTime += NewProject_delay_step;
+        return;
+    }
+    
     if (curMode == NewProject_PLAY) { 
-		if (curSceneIdx <= NewProject_SequenceLength_max) {
+		if (curSceneIdx <= NewProject_SequenceLength_max - 1) {
 			sequenceList[curSequenceId].seqLength = curSceneIdx++;
 		}
 		else {
@@ -64,6 +71,7 @@ void loop() {
 		}
 		updateSequenceScenes();
     }
+    curTime = 0;
 }
 
 void NewProject_connectHandler(void) {
