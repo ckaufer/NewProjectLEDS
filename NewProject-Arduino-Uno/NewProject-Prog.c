@@ -1,15 +1,23 @@
 #include "NewProject.h"
 #include "Hal.h"
-
+#include <avr/pgmspace.h>
 NewProject_Scene sceneList[NewProject_SceneId_max];
 NewProject_Sequence sequenceList[NewProject_SequenceId_max];
 NewProject_currentSceneId_t curSceneId;
+NewProject_currentSequenceId_t curSequenceId;
 NewProject_currentMode_t curMode;
+NewProject_delay_t delayVal = 0.8 * NewProject_delay_scale;
+NewProject_occupiedScenes_t occupiedScenes = 2;
+uint16_t curSceneIdx;
+
+static void loop(void);
 
 void main() {
 	Hal_init();
+	Hal_tickStart(NewProject_delay_step, loop);
 	NewProject_start();    
 	Hal_idleLoop();
+
 }
 
 void updateLed(uint8_t id, NewProject_LedState ledState) {
@@ -37,6 +45,18 @@ void updateSceneLeds() {
     updateLed(13, scenePtr->led13);
     updateLed(14, scenePtr->led14);
     updateLed(15, scenePtr->led15);
+}
+
+void loop() {
+    if (curMode == NewProject_PLAY) {
+        if (curSceneIdx <= occupiedScenes) {
+            curSceneId = curSceneIdx++;
+        }
+        else {
+            curSceneIdx = 0;
+        }
+        updateSceneLeds();
+    }
 }
 
 void NewProject_connectHandler(void) {
@@ -67,15 +87,22 @@ void NewProject_currentScene_store(NewProject_currentScene_t* input) {
 }
 
 void NewProject_currentSequenceId_store(NewProject_currentSequenceId_t* input) {
-    /* TODO: write resource 'currentSequenceId' from 'input' */
+    if (curMode == NewProject_EDIT) {
+        curSequenceId = *input;
+        updateSceneLeds();
+    }
 }
 
 void NewProject_currentSequence_fetch(NewProject_currentSequence_t* output) {
-    /* TODO: read resource 'currentSequence' into 'output' */
+    *output = sequenceList[curSequenceId];
+    output->sequenceId = curSequenceId;
 }
 
 void NewProject_currentSequence_store(NewProject_currentSequence_t* input) {
-    /* TODO: write resource 'currentSequence' from 'input' */
+    if (curMode == NewProject_EDIT) {
+        sequenceList[curSequenceId] = *input;
+        updateSceneLeds();
+    }
 }
 
 void NewProject_currentMode_fetch(NewProject_currentMode_t* output) {
@@ -84,4 +111,20 @@ void NewProject_currentMode_fetch(NewProject_currentMode_t* output) {
 
 void NewProject_currentMode_store(NewProject_currentMode_t* input) {
     curMode = *input;
+}
+
+void NewProject_delay_fetch(NewProject_delay_t* output) {
+    *output = delayVal;
+}
+
+void NewProject_delay_store(NewProject_delay_t* input) {
+    delayVal = *input;
+}
+
+void NewProject_occupiedScenes_fetch(NewProject_occupiedScenes_t* output) {
+    *output = occupiedScenes;
+}
+
+void NewProject_occupiedScenes_store(NewProject_occupiedScenes_t* input) {
+    occupiedScenes = *input;
 }
