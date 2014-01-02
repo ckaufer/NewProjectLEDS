@@ -1,23 +1,24 @@
 #include "NewProject.h"
 #include "Hal.h"
 #include <avr/pgmspace.h>
+
 NewProject_Scene sceneList[NewProject_SceneId_max];
 NewProject_Sequence sequenceList[NewProject_SequenceId_max];
+NewProject_currentSequence_t currentSequence;
 NewProject_currentSceneId_t curSceneId;
 NewProject_currentSequenceId_t curSequenceId;
 NewProject_currentMode_t curMode;
 NewProject_delay_t delayVal = 0.8 * NewProject_delay_scale;
 NewProject_occupiedScenes_t occupiedScenes = 2;
-uint16_t curSceneIdx;
-
+uint16_t curSceneIdx = 0;
 static void loop(void);
 
 void main() {
 	Hal_init();
-	Hal_tickStart(NewProject_delay_step, loop);
+	Hal_tickStart(1000, loop);
 	NewProject_start();    
 	Hal_idleLoop();
-
+	//PROGMEM  prog_uint16_t charSet[]  = {3, 3, 4};
 }
 
 void updateLed(uint8_t id, NewProject_LedState ledState) {
@@ -47,15 +48,21 @@ void updateSceneLeds() {
     updateLed(15, scenePtr->led15);
 }
 
+void updateSequenceScenes() {
+    curSceneId = sequenceList[curSequenceId].sceneList[sequenceList[curSequenceId].seqLength];
+    sceneList[curSceneId].sceneId = curSceneId;
+    updateSceneLeds();
+}
+
 void loop() {
-    if (curMode == NewProject_PLAY) {
-        if (curSceneIdx <= occupiedScenes) {
-            curSceneId = curSceneIdx++;
-        }
-        else {
+    if (curMode == NewProject_PLAY) { 
+		if (curSceneIdx <= NewProject_SequenceLength_max) {
+			sequenceList[curSequenceId].seqLength = curSceneIdx++;
+		}
+		else {
             curSceneIdx = 0;
-        }
-        updateSceneLeds();
+		}
+		updateSequenceScenes();
     }
 }
 
@@ -89,7 +96,6 @@ void NewProject_currentScene_store(NewProject_currentScene_t* input) {
 void NewProject_currentSequenceId_store(NewProject_currentSequenceId_t* input) {
     if (curMode == NewProject_EDIT) {
         curSequenceId = *input;
-        updateSceneLeds();
     }
 }
 
@@ -101,7 +107,7 @@ void NewProject_currentSequence_fetch(NewProject_currentSequence_t* output) {
 void NewProject_currentSequence_store(NewProject_currentSequence_t* input) {
     if (curMode == NewProject_EDIT) {
         sequenceList[curSequenceId] = *input;
-        updateSceneLeds();
+        updateSequenceScenes();
     }
 }
 
