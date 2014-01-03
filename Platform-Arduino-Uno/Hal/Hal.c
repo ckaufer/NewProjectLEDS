@@ -214,6 +214,26 @@ void Hal_tickStart(uint16_t msecs, void (*handler)(void)) {
     TCCR1B = TIMER_MODE_CTC | TIMER_DIV1024;    // start timer
 }
 
+void Hal_User_eepromRead(uint16_t addr, void* output, uint16_t length) {
+    uint8_t* src; 
+    uint8_t* dst;
+    src = (uint8_t*)addr;
+    dst = (uint8_t*)output;
+    for (uint16_t i = 0; i < length; i++) {
+        *dst++ = eeprom_read_byte(src++);
+    }
+}
+
+void Hal_User_eepromWrite(uint16_t addr, void* input, uint16_t length) {
+    uint8_t* src; 
+    uint8_t* dst;
+    src = (uint8_t*)input;
+    dst = (uint8_t*)addr;
+    for (uint16_t i = 0; i < length; i++) {
+        eeprom_write_byte(dst++, *src++);
+    }
+}
+
 /* -------- SRT-HAL INTERFACE -------- */
 
 uint8_t Em_Hal_lock(void) {
