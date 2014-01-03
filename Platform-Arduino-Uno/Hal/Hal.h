@@ -297,7 +297,8 @@ extern void Hal_ledToggle(void);
  *
  **/
 extern void Hal_tickStart(uint16_t msecs, Hal_Handler Handler);
-
+extern void Hal_User_eepromRead(uint16_t addr, void* output, uint16_t length);
+extern void Hal_User_eepromWrite(uint16_t addr, void* input, uint16_t length);
 #ifdef __cplusplus
 }
 #endif
