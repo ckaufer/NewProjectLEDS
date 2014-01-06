@@ -3,17 +3,20 @@ description = ""
 
 schema NewProject {
 
-	
-	typedef num <0, 3> SceneId;
-	typedef num <0, 2> SequenceId;
-	typedef num <0, 5> SequenceLength;
-	
+	typedef num <0, 10> SceneId;
+	typedef num <0, 5> SequenceId;
+	typedef num <0, 10> SequenceLength;
+    typedef num <0, 512> EepromSlots;
 	enum Mode {
-	    PLAY, EDIT
+	    EDIT, PLAY
 	}
 	
 	enum LedState {
 	    OFF, ON
+	}
+	
+	enum Store {
+	    LOAD, SAVE
 	}
 	
 	struct Scene {
@@ -36,16 +39,26 @@ schema NewProject {
 	
 	struct Sequence {
 	    SequenceId sequenceId;
+	    SequenceLength maxRange;
+	    SequenceLength minRange;
         SequenceLength seqLength;
-	    SceneId sceneList[5];
+	    SceneId sceneList[10];
 	}
-	
+    
+    struct Storage {
+        EepromSlots eepromSlots;  
+    }
+    
 	SceneId currentSceneId {
 	    writeonly;
 	}
 	
 	Scene currentScene {
 	    readwrite;
+	}
+	
+	SceneId sceneState {
+	    indicator;
 	}
 	
 	SequenceId currentSequenceId {
@@ -59,5 +72,17 @@ schema NewProject {
 	Mode currentMode {
 	    readwrite;
 	}
+	
+	Storage SaveAndLoad {
+	    readwrite;
+	}
+	
+	num <0.05, 2.5, 0.100> delay {
+	    readwrite;
+	}
+	
+	uint16 test;
+
+	
 
 };
