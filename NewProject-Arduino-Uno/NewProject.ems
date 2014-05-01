@@ -1,88 +1,86 @@
 version = "1.0.0"
 description = ""
-
 schema NewProject {
 
-	typedef num <0, 10> SceneId;
-	typedef num <0, 5> SequenceId;
-	typedef num <0, 10> SequenceLength;
-    typedef num <0, 512> EepromSlots;
-	enum Mode {
-	    EDIT, PLAY
-	}
-	
-	enum LedState {
-	    OFF, ON
-	}
-	
-	enum Store {
-	    LOAD, SAVE
-	}
-	
-	struct Scene {
-        SceneId sceneId;
-        LedState led2;
-	    LedState led3;
-	    LedState led4;
-	    LedState led5;
-	    LedState led6;
-	    LedState led7;
-	    LedState led8;
-	    LedState led9;
-	    LedState led10;
-	    LedState led11;
-	    LedState led12;
-	    LedState led13;
-	    LedState led14;
-	    LedState led15;
-	}
-	
-	struct Sequence {
-	    SequenceId sequenceId;
-	    SequenceLength maxRange;
-	    SequenceLength minRange;
-        SequenceLength seqLength;
-	    SceneId sceneList[10];
-	}
-    
-    struct Storage {
-        EepromSlots eepromSlots;  
-    }
-    
-	SceneId currentSceneId {
-	    writeonly;
-	}
-	
-	Scene currentScene {
-	    readwrite;
-	}
-	
-	SceneId sceneState {
-	    indicator;
-	}
-	
-	SequenceId currentSequenceId {
-	    writeonly;
-	}
-	
-	Sequence currentSequence {
-	    readwrite;
-	}
-	
-	Mode currentMode {
-	    readwrite;
-	}
-	
-	Storage SaveAndLoad {
-	    readwrite;
-	}
-	
-	num <0.05, 2.5, 0.100> delay {
-	    readwrite;
-	}
-	
-	uint16 test;
+typedef num <0, 10> SceneId;
+typedef num <0, 5> SequenceId;
+typedef num <0, 10> SequenceLength;
+typedef num <0, 512> EepromSlots;
+enum Mode {
+EDIT, PLAY
+}
 
-	
+enum LedState {
+OFF, ON
+}
+
+enum Store {
+LOAD, SAVE
+}
+
+struct Scene {
+SceneId sceneId;
+LedState led2;
+LedState led3;
+LedState led4;
+LedState led5;
+LedState led6;
+LedState led7;
+LedState led8;
+LedState led9;
+LedState led10;
+LedState led11;
+LedState led12;
+LedState led13;
+LedState led14;
+LedState led15;
+}
+
+struct Sequence {
+SequenceId sequenceId;
+SequenceLength maxRange;
+SequenceLength minRange;
+SequenceLength seqLength;
+SceneId sceneList[10];
+}
+
+struct Storage {
+EepromSlots eepromSlots;
+}
+
+SceneId currentSceneId {
+writeonly;
+}
+
+Scene currentScene {
+readwrite;
+}
+
+SceneId sceneState {
+indicator;
+}
+
+SequenceId currentSequenceId {
+writeonly;
+}
+
+Sequence currentSequence {
+readwrite;
+}
+
+Mode currentMode {
+readwrite;
+}
+
+Storage SaveAndLoad {
+readwrite;
+}
+
+num <0.05, 2.5, 0.100> delay {
+readwrite;
+}
+
+
+
 
 };
