@@ -36,38 +36,16 @@ void main() {
 
 SceneMask encodeScene(NewProject_currentScene_t* input) {
     SceneMask result = 0;
-    result |= (input->led2) << 2;
-    result |= (input->led3) << 3;
-    result |= (input->led4) << 4;
-    result |= (input->led5) << 5;
-    result |= (input->led6) << 6;
-    result |= (input->led7) << 7;
-    result |= (input->led8) << 8;
-    result |= (input->led9) << 9;
-    result |= (input->led10) << 10;
-    result |= (input->led11) << 11;
-    result |= (input->led12) << 12;
-    result |= (input->led13) << 13;
-    result |= (input->led14) << 14;
-    result |= (input->led15) << 15;
+    for(uint16_t i = 0; i < 14; i++) {
+       result |= (input->led[i + 2]) << i + 2; 
+    }
     return result;
 }
 
 void decodeScene(SceneMask mask, NewProject_Scene* output) {
-    output->led2 = LEDSTATE(mask, 2);
-    output->led3 = LEDSTATE(mask, 3);
-    output->led4 = LEDSTATE(mask, 4);
-    output->led5 = LEDSTATE(mask, 5);
-    output->led6 = LEDSTATE(mask, 6);
-    output->led7 = LEDSTATE(mask, 7);
-    output->led8 = LEDSTATE(mask, 8);
-    output->led9 = LEDSTATE(mask, 9);
-    output->led10 = LEDSTATE(mask, 10);
-    output->led11 = LEDSTATE(mask, 11);
-    output->led12 = LEDSTATE(mask, 12);
-    output->led13 = LEDSTATE(mask, 13);
-    output->led14 = LEDSTATE(mask, 14);
-    output->led15 = LEDSTATE(mask, 15);
+    for(uint16_t i = 0; i < 14; i++) {
+        output->led[i + 2] = LEDSTATE(mask, i + 2);
+    }
 }
 
 void updateLed(uint8_t id, SceneMask ledState) {
@@ -84,20 +62,9 @@ void updateLed(uint8_t id, SceneMask ledState) {
 void updateSceneLeds() {
     //NewProject_currentScene_t* scenePtr = &sceneList[curSceneId];
     SceneMask mask = sceneList[curSceneId];
-    updateLed(2, LEDSTATE(mask, 2));
-    updateLed(3, LEDSTATE(mask, 3));
-    updateLed(4, LEDSTATE(mask, 4));
-    updateLed(5, LEDSTATE(mask, 5));
-    updateLed(6, LEDSTATE(mask, 6));
-    updateLed(7, LEDSTATE(mask, 7));
-    updateLed(8, LEDSTATE(mask, 8));
-    updateLed(9, LEDSTATE(mask, 9));
-    updateLed(10, LEDSTATE(mask, 10));
-    updateLed(11, LEDSTATE(mask, 11));
-    updateLed(12, LEDSTATE(mask, 12));
-    updateLed(13, LEDSTATE(mask, 13));
-    updateLed(14, LEDSTATE(mask, 14));
-    updateLed(15, LEDSTATE(mask, 15));
+    for(uint16_t i = 0; i < 14; i++) {
+        updateLed(i + 2, LEDSTATE(mask, i + 2));
+    }
 }
 
 void updateSequenceScenes() {
@@ -108,7 +75,7 @@ void updateSequenceScenes() {
 
 void tickHandler() {
     
-    if (curTime < delayVal) {
+    /*if (curTime < delayVal) {
         curTime += NewProject_delay_step;
         return;
     }
@@ -123,8 +90,7 @@ void tickHandler() {
         }
         updateSequenceScenes();
     }
-    curTime = 0;
-    NewProject_sceneState_indicate;
+    curTime = 0;*/
 }
 
 void NewProject_connectHandler(void) {
@@ -156,38 +122,38 @@ void NewProject_currentScene_store(NewProject_currentScene_t* input) {
 }
 
 void NewProject_currentSequenceId_store(NewProject_currentSequenceId_t* input) {
-    if (curMode == NewProject_EDIT) {
-        curSequenceId = *input;
-        updateSequenceScenes();
-    }
+    //if (curMode == NewProject_EDIT) {
+       // curSequenceId = *input;
+      //  updateSequenceScenes();
+    //}
 }
 
 void NewProject_currentSequence_fetch(NewProject_currentSequence_t* output) {
-    *output = sequenceList[curSequenceId];
-    output->sequenceId = curSequenceId;
+    //*output = sequenceList[curSequenceId];
+   // output->sequenceId = curSequenceId;
 }
 
 void NewProject_currentSequence_store(NewProject_currentSequence_t* input) {
    // if (curMode == NewProject_EDIT) {
-        sequenceList[curSequenceId] = *input;
-        updateSequenceScenes();
+       // sequenceList[curSequenceId] = *input;
+       // updateSequenceScenes();
     //}
 }
 
 void NewProject_currentMode_fetch(NewProject_currentMode_t* output) {
-    *output = curMode;
+   // *output = curMode;
 }
 
 void NewProject_currentMode_store(NewProject_currentMode_t* input) {
-    curMode = *input;
+   // curMode = *input;
 }
 
 void NewProject_delay_fetch(NewProject_delay_t* output) {
-    *output = delayVal;
+    //*output = delayVal;
 }
 
 void NewProject_delay_store(NewProject_delay_t* input) {
-    delayVal = *input;
+    //delayVal = *input;
 }
 
 void NewProject_sceneState_fetch(NewProject_sceneState_t* output) {
@@ -195,9 +161,9 @@ void NewProject_sceneState_fetch(NewProject_sceneState_t* output) {
 }
 
 void NewProject_SaveAndLoad_fetch(NewProject_SaveAndLoad_t* output) {
-    updateSceneLeds();
+    //updateSceneLeds();
 }
 
 void NewProject_SaveAndLoad_store(NewProject_SaveAndLoad_t* input) {
-    updateSceneLeds();
+    //updateSceneLeds();
 }
