@@ -20,20 +20,7 @@ LOAD, SAVE
 
 struct Scene {
 SceneId sceneId;
-LedState led2;
-LedState led3;
-LedState led4;
-LedState led5;
-LedState led6;
-LedState led7;
-LedState led8;
-LedState led9;
-LedState led10;
-LedState led11;
-LedState led12;
-LedState led13;
-LedState led14;
-LedState led15;
+LedState led[16];
 }
 
 struct Sequence {
@@ -76,7 +63,7 @@ Storage SaveAndLoad {
 readwrite;
 }
 
-num <0.05, 2.5, 0.100> delay {
+num <0.5, 2.5, 0.100> delay {
 readwrite;
 }
 
