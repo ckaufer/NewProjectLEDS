@@ -8,7 +8,7 @@
 #define offsetof_elem(type, memb, index) \ 
                  ((size_t)(offsetof(type, memb[0]) + \ 
                            (size_t)(index) * sizeof(((type *)0)->memb[0]) ))
-#define FRAME_OFFSET() offsetof_elem(Database, frameTable, currentFrameId)
+#define FRAME_OFFSET(index) offsetof_elem(Database, frameTable, index)
 #define SCENE_OFFSET() offsetof_elem(Database, sceneTable, currentSceneId)
 #define LEDSTATE(mask, n) (mask & (1 << n) ? NewProject_ON : NewProject_OFF)
 //declare helper functions above
@@ -26,13 +26,13 @@ Database d;
 FrameMask frameList[NewProject_FrameId_max];
 NewProject_Scene sceneList[NewProject_SceneId_max];
 NewProject_currentScene_t currentScene;
-NewProject_currentFrameId_t currentFrameId;
-NewProject_currentSceneId_t currentSceneId;
+NewProject_currentFrameId_t currentFrameId = 1;
+NewProject_currentSceneId_t currentSceneId = 1;
 NewProject_currentMode_t currentMode;
 NewProject_delay_t delayVal = 0.8 * NewProject_delay_scale;
 NewProject_delay_t currentTime = 0;
 NewProject_SaveToEEProm saveState = 0;
-uint16_t currentFrameIdx = 0;
+uint16_t currentFrameIdx = 1;
 
 static void tickHandler(void);
 static void decodeFrame(FrameMask, NewProject_Frame*);
@@ -44,22 +44,23 @@ static void updateSceneFrames(void);
 
 void main() {
     Hal_init();
+    //loadFramesFromEEProm();
     Hal_tickStart(NewProject_delay_step, tickHandler);
-    NewProject_start();    
+    NewProject_start();
     Hal_idleLoop();
 }
 
 FrameMask encodeFrame(NewProject_currentFrame_t* input) {
     FrameMask result = 0;
-    for(uint16_t i = 0; i < 14; i++) {
-       result |= (input->led[i + 2]) << i + 2; 
+    for(uint16_t i = 0; i <= NewProject_currentFrameId_max; i++) {
+       result |= (input->led[i + 1]) << i + 1; 
     }
     return result;
 }
 
 void decodeFrame(FrameMask mask, NewProject_Frame* output) {
-    for(uint16_t i = 0; i < 14; i++) {
-        output->led[i + 2] = LEDSTATE(mask, i + 2);
+    for(uint16_t i = 0; i <= NewProject_currentFrameId_max; i++) {
+        output->led[i + 1] = LEDSTATE(mask, i + 1);
     }
 }
 
@@ -72,13 +73,11 @@ void updateLed(uint8_t id, FrameMask ledState) {
     }
 }
 
-
-
 void updateFrameLeds() {
     //NewProject_currentFrame_t* framePtr = &frameList[currentFrameId];
     FrameMask mask = frameList[currentFrameId];
-    for(uint16_t i = 0; i < 14; i++) {
-        updateLed(i + 2, LEDSTATE(mask, i + 2));
+    for(uint16_t i = 0; i <= NewProject_currentFrameId_max; i++) {
+        updateLed(i + 1, LEDSTATE(mask, i + 1));
     }
 }
 
@@ -98,7 +97,6 @@ void tickHandler() {
     if (currentMode == NewProject_PLAY) { 
         if (currentFrameIdx < sceneList[currentSceneId].maxRange) {
             sceneList[currentSceneId].seqLength = currentFrameIdx++;
-            
         }
         else {
             currentFrameIdx = 0;
@@ -109,34 +107,27 @@ void tickHandler() {
 }
 
 void loadFrameFromEEProm(FrameMask frameNum) {
-    FrameMask* temp;
-    Hal_User_eepromRead(FRAME_OFFSET(), temp, sizeof(FrameMask));
-    if (temp == 65535 || frameList[frameNum] == 65535) {
-        frameList[frameNum] = 0;
-    }
-    else {
-        frameList[frameNum] = *temp;
-    }
-
+    FrameMask* temp = 0;
+    Hal_User_eepromRead(FRAME_OFFSET(frameNum), &frameList[frameNum], sizeof(FrameMask));
     updateFrameLeds();
 }
 
 void saveFrameToEEProm(FrameMask frameNum) {
-    Hal_User_eepromWrite(FRAME_OFFSET(), &frameList[frameNum], sizeof(FrameMask));
+    //Hal_User_eepromWrite(500, &frameList[frameNum], sizeof(FrameMask));
+    FrameMask* t;
+    Hal_User_eepromWrite(FRAME_OFFSET(frameNum), &frameList[frameNum], sizeof(FrameMask));
 }
 
-void saveFramesToEEProm(FrameMask startNum, FrameMask endNum) {
+void saveFramesToEEProm() {
     for(uint16_t i = 0; i < NewProject_FrameId_max; i++) {
-        if(d.frameTable[i] != NULL) {
-            saveFrameToDatabase();
-        }
+        saveFrameToEEProm(i);
     }
-    emptyDatabaseFrames();
 }
 
-void loadFramesToEEProm(FrameMask startNum, FrameMask endNum) {
-    Hal_User_ledOff(5);
-    Hal_User_ledOn(6);
+void loadFramesFromEEProm() {
+    for(uint16_t i = 0; i < NewProject_FrameId_max; i++) {
+        loadFrameFromEEProm(i);
+    }
 }
 
 void loadFrameFromDatabase(FrameMask frameNum) {
@@ -169,10 +160,9 @@ void NewProject_currentFrameId_store(NewProject_currentFrameId_t* input) {
 }
 
 void NewProject_currentFrame_fetch(NewProject_currentFrame_t* output) {
-    loadFrameFromDatabase(output);
+    loadFrameFromDatabase(currentFrameId);
     decodeFrame(frameList[currentFrameId], output);
     output->frameId = currentFrameId;
-    updateSceneFrames();
 }
 
 void NewProject_currentFrame_store(NewProject_currentFrame_t* input) {
@@ -231,15 +221,15 @@ void NewProject_saveToEEProm_store(NewProject_saveToEEProm_t* input) {
     /* TODO: write resource 'saveToEEProm' from 'input' */
     saveState = *input;
     if(saveState == NewProject_SAVE) {
-        saveFramesToEEProm(0, 2);
+        saveFramesToEEProm();
     } else {
-        loadFramesToEEProm(0, 2);
+        loadFramesFromEEProm();//loadFramesFromEEProm();
     }
     
 }
 
 void NewProject_printout_fetch(NewProject_printout_t* output) {
-    *output = d.frameTable[currentFrameId];
+    *output = frameList[currentFrameId];
 }
 
 void NewProject_printout_store(NewProject_printout_t* input) {
